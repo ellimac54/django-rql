@@ -1,23 +1,27 @@
 dist: trusty
 language: python
-env:
-  - DJANGO_VERSION=1.11
-  - DJANGO_VERSION=2.2
-  - DJANGO_VERSION=3.1
 jobs:
   include:
   - os: linux
     python: 3.6
     dist: xenial
     sudo: true
+    env: 
+      - DJANGO_VERSION=3.1.*
   - os: linux
     python: 3.7
     dist: xenial
     sudo: true
-    env: BUILD=PYPI
+    env: 
+      - BUILD=PYPI
+      - DJANGO_VERSION=3.1.*
   - os: linux
     python: 3.8
     dist: xenial
+    env:
+      - DJANGO_VERSION=1.11.*
+      - DJANGO_VERSION=2.2.*
+      - DJANGO_VERSION=3.1.*
     sudo: true
 install:
 - pip install -r requirements/dev.txt
