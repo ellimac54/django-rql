@@ -38,7 +38,7 @@ install:
 - pip install django==$DJANGO_VERSION
 script:
 - flake8
-- python setup.py test
+- pytest
 - sonar-scanner
 after_success:
 - bash <(curl -s https://codecov.io/bash)
