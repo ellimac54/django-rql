@@ -648,8 +648,8 @@ class RQLFilterClass:
         for index, part in enumerate(field_name_parts, start=1):
             current_field = cls._get_model_field(current_model, part)
             if index == field_name_parts_length:
-                assert get_related or isinstance(current_field, SUPPORTED_FIELD_TYPES), \
-                    'Unsupported field type: {}.'.format(field_name)
+                #assert get_related or isinstance(current_field, SUPPORTED_FIELD_TYPES), \
+                #    'Unsupported field type: {}.'.format(field_name)
                 return current_field
             current_model = current_field.related_model
 
